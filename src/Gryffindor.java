@@ -5,9 +5,9 @@ public class Gryffindor extends Hogwarts{
     private int bravery;    //С…СЂР°Р±СЂРѕСЃС‚СЊ
     protected Gryffindor(String name, String surname) {
         super(name, surname);
-        nobility = new Random().nextInt(100);
-        honour = new Random().nextInt(100);
-        bravery = new Random().nextInt(100);
+        nobility = new Random().nextInt(10,100);
+        honour = new Random().nextInt(10,100);
+        bravery = new Random().nextInt(10, 100);
     }
 
     public int getBravery() {

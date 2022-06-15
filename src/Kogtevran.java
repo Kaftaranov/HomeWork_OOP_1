@@ -7,10 +7,10 @@ public class Kogtevran extends Hogwarts{
     private int creative;   //С‚РІРѕСЂС‡РµСЃС‚РІРѕ
     protected Kogtevran(String name, String surname) {
         super(name, surname);
-        clever = new Random().nextInt(100);
-        wit = new Random().nextInt(100);
-        wisdom = new Random().nextInt(100);
-        creative = new Random().nextInt(100);
+        clever = new Random().nextInt(10,100);
+        wit = new Random().nextInt(10,100);
+        wisdom = new Random().nextInt(10,100);
+        creative = new Random().nextInt(10,100);
     }
 
     public int getClever() {

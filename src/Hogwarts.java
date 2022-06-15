@@ -7,8 +7,8 @@ public class Hogwarts {
     protected Hogwarts(String name, String surname) {
         this.name = name;
         this.surname = surname;
-        witchcraft = new Random().nextInt(100);
-        transgression = new Random().nextInt(100);
+        witchcraft = new Random().nextInt(10,100);
+        transgression = new Random().nextInt(10,100);
     }
 
     public String getName() {

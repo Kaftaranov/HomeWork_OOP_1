@@ -99,7 +99,7 @@ public class Main {
         printFooter(headingLength);
     }
     public static void printPuffenduyStudents(){
-        String headingForName = "| Puffenduy Student ";
+        String headingForName = "| Puffenduy Student       ";
         String headingForWitchcraft = "| Witchcraft ";
         String headingForTransgression = "| Transgression ";
         String headingForDiligence = "| Diligence ";
@@ -112,12 +112,17 @@ public class Main {
                 headingForHonesty+headingForLoyalty);
         printFooter(headingLength);
         for (Puffenduy puffenduy : puffenduyStudent) {
-            System.out.print(puffenduy.getName() + " " + puffenduy.getSurname());
-            System.out.print("\t\t  " + puffenduy.getWitchCraft() + "\t  |");
-            System.out.print("\t\t  " + puffenduy.getTransgression() + "\t      |");
-            System.out.print("\t\t  " + puffenduy.getDiligence() + "\t |");
-            System.out.print("\t\t  " + puffenduy.getHonesty() + "   |");
-            System.out.println("\t\t  " + puffenduy.getLoyalty() + "   |");
+            System.out.print("| " + puffenduy.getName() + " " + puffenduy.getSurname());
+            for (int i = 0; i < headingForName.length()-1-puffenduy.getName().length()-1
+                    -puffenduy.getSurname().length()-1 ; i++) {
+                System.out.print(" ");
+            }
+            System.out.print("|");
+            System.out.print("\t   " + puffenduy.getWitchCraft() + "\t   |");
+            System.out.print("\t    " + puffenduy.getTransgression() + "\t   |");
+            System.out.print("\t " + puffenduy.getDiligence() + "\t   |");
+            System.out.print("\t" + puffenduy.getHonesty() + "   |");
+            System.out.println("\t " + puffenduy.getLoyalty() + "    |");
         }
         printFooter(headingLength);
     }
@@ -130,19 +135,24 @@ public class Main {
         String headingForWisdom = "| Wisdom ";
         String headingForCreative = "| Creative |";
         int headingLength = headingForName.length() + headingForWitchcraft.length() + headingForTransgression.length() +
-                headingForWisdom.length() + headingForWit.length() + headingForClever.length();
+                headingForWisdom.length() + headingForWit.length() + headingForClever.length() + headingForCreative.length();
         printFooter(headingLength);
         System.out.println(headingForName + headingForWitchcraft+headingForTransgression+ headingForClever +
                 headingForWit + headingForWisdom + headingForCreative);
         printFooter(headingLength);
         for (Kogtevran kogtevran : kogtevranStudent) {
-            System.out.print(kogtevran.getName() + " " + kogtevran.getSurname() + "\t  |");
-            System.out.print("\t\t  " + kogtevran.getWitchCraft() + "\t      |");
-            System.out.print("\t\t  " + kogtevran.getTransgression() + "\t |");
-            System.out.print("\t\t  " + kogtevran.getClever() + "   |");
-            System.out.print("\t\t  " + kogtevran.getWit() + "   |");
-            System.out.print("\t\t  " + kogtevran.getWisdom() + "   |");
-            System.out.println("\t\t  " + kogtevran.getCreative() + "   |");
+            System.out.print("| " + kogtevran.getName() + " " + kogtevran.getSurname());
+            for (int i = 0; i < headingForName.length()-1-kogtevran.getName().length()-1
+                    -kogtevran.getSurname().length()-1 ; i++) {
+                System.out.print(" ");
+            }
+            System.out.print("|");
+            System.out.print("\t  " + kogtevran.getWitchCraft() + "\t |");
+            System.out.print("\t    " + kogtevran.getTransgression() + "\t     |");
+            System.out.print("\t " + kogtevran.getClever() + "   |");
+            System.out.print("  " + kogtevran.getWit() + " |");
+            System.out.print("\t" + kogtevran.getWisdom() + "   |");
+            System.out.println("    " + kogtevran.getCreative() + "    |");
         }
         printFooter(headingLength);
     }
@@ -163,14 +173,19 @@ public class Main {
                 headingForDetermination + headingForAmbition + headingForIngenuity + headingForPower_Thirsty );
         printFooter(headingLength);
         for (Slytherin slytherin : slytherinStudent) {
-            System.out.print(slytherin.getName() + " " + slytherin.getSurname() + "\t  |");
-            System.out.print("\t\t  " + slytherin.getWitchCraft() + "\t      |");
-            System.out.print("\t\t  " + slytherin.getTransgression() + "\t      |");
-            System.out.print("\t\t  " + slytherin.getTrick() + "   |");
-            System.out.print("\t\t  " + slytherin.getDetermination()  + "   |");
-            System.out.print("\t\t  " + slytherin.getAmbition() + "   |");
-            System.out.print("\t\t  " + slytherin.getIngenuity() + "   |");
-            System.out.println("\t\t : " + slytherin.getPower_thirsty() + "   |");
+            System.out.print("| " + slytherin.getName() + " " + slytherin.getSurname());
+            for (int i = 0; i < headingForName.length()-1-slytherin.getName().length()-1
+                    -slytherin.getSurname().length()-1 ; i++) {
+                System.out.print(" ");
+            }
+            System.out.print("|");
+            System.out.print("\t  " + slytherin.getWitchCraft() + "\t |");
+            System.out.print("\t    " + slytherin.getTransgression() + "\t     |");
+            System.out.print("\t " + slytherin.getTrick() + "  |");
+            System.out.print("\t    " + slytherin.getDetermination()  + "       |");
+            System.out.print("\t  " + slytherin.getAmbition() + "   |");
+            System.out.print("\t  " + slytherin.getIngenuity() + "    |");
+            System.out.println("\t   " + slytherin.getPower_thirsty() + "\t    |");
         }
         printFooter(headingLength);
     }

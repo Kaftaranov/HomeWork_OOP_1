@@ -6,9 +6,9 @@ public class Puffenduy extends Hogwarts{
     private int honesty;    //С‡РµСЃС‚РЅРѕСЃС‚СЊ
     protected Puffenduy(String name, String surname) {
         super(name, surname);
-        diligence = new Random().nextInt(100);
-        loyalty = new Random().nextInt(100);
-        honesty = new Random().nextInt(100);
+        diligence = new Random().nextInt(10, 100);
+        loyalty = new Random().nextInt(10, 100);
+        honesty = new Random().nextInt(10, 100);
     }
 
     public int getDiligence() {

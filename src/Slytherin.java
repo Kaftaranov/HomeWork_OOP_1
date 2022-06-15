@@ -9,11 +9,11 @@ public class Slytherin extends Hogwarts{
 
     protected Slytherin(String name, String surname) {
         super(name, surname);
-        trick = new Random().nextInt(100);
-        determination = new Random().nextInt(100);
-        ambition = new Random().nextInt(100);
-        ingenuity = new Random().nextInt(100);
-        power_thirsty = new Random().nextInt(100);
+        trick = new Random().nextInt(10,100);
+        determination = new Random().nextInt(10,100);
+        ambition = new Random().nextInt(10,100);
+        ingenuity = new Random().nextInt(10,100);
+        power_thirsty = new Random().nextInt(10,100);
     }
 
     public int getTrick() {
