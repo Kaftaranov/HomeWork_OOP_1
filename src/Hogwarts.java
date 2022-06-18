@@ -4,11 +4,11 @@ public class Hogwarts {
     private String surname;
     private int witchcraft;
     private int transgression;
-    protected Hogwarts(String name, String surname) {
+    protected Hogwarts(String name, String surname, int witchcraft, int transgression) {
         this.name = name;
         this.surname = surname;
-        witchcraft = new Random().nextInt(10,100);
-        transgression = new Random().nextInt(10,100);
+        this.witchcraft = witchcraft;
+        this.transgression = transgression;
     }
 
     public String getName() {

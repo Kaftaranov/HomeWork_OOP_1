@@ -1,25 +1,27 @@
 import java.util.Random;
 
 public class Main {
-    private static final String[] gryffindorStudentsList = new String[] {"Harry Potter", "Germiona Granger", "Rohn Weasley"};
-    private static final String[] slytherinStudentsList = new String[] {"Dracko Malfoy", "Graham Montegue", "Gregory Goyle"};
-    private static final String[] puffenduyStudentsList = new String[] {"Zakharia Smith", "Sadrick Diggory", "Justin Finch-Fletchlie"};
-    private static final String[] kogtevranStudentsList = new String[] {"Chzhou Chang", "Padma Mateel", "Markus Balbie"};
-    private static final Gryffindor[] gryffindorStudent = new Gryffindor[gryffindorStudentsList.length];
-    private static final Puffenduy[] puffenduyStudent = new Puffenduy[puffenduyStudentsList.length];
-    private static final Kogtevran[] kogtevranStudent = new Kogtevran[kogtevranStudentsList.length];
-    private static final Slytherin[] slytherinStudent = new Slytherin[slytherinStudentsList.length];
+    private static final String[] GRYFFINDORSTUDENTSLIST = new String[] {"Harry Potter", "Germiona Granger", "Rohn Weasley"};
+    private static final String[] SLYTHERINSTUDENTSLIST = new String[] {"Dracko Malfoy", "Graham Montegue", "Gregory Goyle"};
+    private static final String[] PUFFENDUYSTUDENTLIST = new String[] {"Zakharia Smith", "Sadrick Diggory", "Justin Finch-Fletchlie"};
+    private static final String[] KOGTEVRANSTUDENTLIST = new String[] {"Chzhou Chang", "Padma Mateel", "Markus Balbie"};
+    private static final Gryffindor[] GRYFFINDORSTUDENT = new Gryffindor[GRYFFINDORSTUDENTSLIST.length];
+    private static final Puffenduy[] PUFFENDUYSTUDENT = new Puffenduy[PUFFENDUYSTUDENTLIST.length];
+    private static final Kogtevran[] KOGTEVRANSTUDENT = new Kogtevran[KOGTEVRANSTUDENTLIST.length];
+    private static final Slytherin[] SLYTHERINSTUDENT = new Slytherin[SLYTHERINSTUDENTSLIST.length];
 
     private static void gryffindorAdmission() {
-        for (int i = 0; i < Main.gryffindorStudentsList.length; i++) {
-            gryffindorStudent[i] = new Gryffindor(Main.gryffindorStudentsList[i].split(" ")[0],
-                    Main.gryffindorStudentsList[i].split(" ")[1]);
+        for (int i = 0; i < Main.GRYFFINDORSTUDENTSLIST.length; i++) {
+            GRYFFINDORSTUDENT[i] = new Gryffindor(Main.GRYFFINDORSTUDENTSLIST[i].split(" ")[0],
+                    Main.GRYFFINDORSTUDENTSLIST[i].split(" ")[1], new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100), new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100), new Random().nextInt(10, 100));
         }
     }
     private static void bestGryffindorStudent(){
-        int maxScore = gryffindorStudent[0].getStudentScore();
-        Gryffindor student = gryffindorStudent[0];
-        for (Gryffindor gryffindor : gryffindorStudent) {
+        int maxScore = GRYFFINDORSTUDENT[0].getStudentScore();
+        Gryffindor student = GRYFFINDORSTUDENT[0];
+        for (Gryffindor gryffindor : GRYFFINDORSTUDENT) {
             if (gryffindor.getStudentScore() > maxScore) {
                 maxScore = gryffindor.getStudentScore();
                 student = gryffindor;
@@ -29,15 +31,17 @@ public class Main {
                 " with total score " + maxScore + " points!");
     }
     private static void puffenduyadmission () {
-        for (int i = 0; i < Main.puffenduyStudentsList.length; i++) {
-            puffenduyStudent[i] = new Puffenduy(Main.puffenduyStudentsList[i].split(" ")[0],
-                    Main.puffenduyStudentsList[i].split(" ")[1]);
+        for (int i = 0; i < Main.PUFFENDUYSTUDENTLIST.length; i++) {
+            PUFFENDUYSTUDENT[i] = new Puffenduy(Main.PUFFENDUYSTUDENTLIST[i].split(" ")[0],
+                    Main.PUFFENDUYSTUDENTLIST[i].split(" ")[1], new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100),new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100),new Random().nextInt(10, 100));
         }
     }
     private  static void bestPuffenduyStudent() {
-        int maxScore = puffenduyStudent[0].getStudentScore();
-        Puffenduy student = puffenduyStudent[0];
-        for (Puffenduy puffenduy : puffenduyStudent) {
+        int maxScore = PUFFENDUYSTUDENT[0].getStudentScore();
+        Puffenduy student = PUFFENDUYSTUDENT[0];
+        for (Puffenduy puffenduy : PUFFENDUYSTUDENT) {
             if (puffenduy.getStudentScore() > maxScore) {
                 maxScore = puffenduy.getStudentScore();
                 student = puffenduy;
@@ -48,15 +52,18 @@ public class Main {
     }
 
     private static void kogtevranAdmission () {
-        for (int i = 0; i < Main.kogtevranStudentsList.length; i++) {
-            kogtevranStudent[i] = new Kogtevran(Main.kogtevranStudentsList[i].split(" ")[0],
-                    Main.kogtevranStudentsList[i].split(" ")[1]);
+        for (int i = 0; i < Main.KOGTEVRANSTUDENTLIST.length; i++) {
+            KOGTEVRANSTUDENT[i] = new Kogtevran(Main.KOGTEVRANSTUDENTLIST[i].split(" ")[0],
+                    Main.KOGTEVRANSTUDENTLIST[i].split(" ")[1], new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100),new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100),new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100));
         }
     }
     private static void bestKogtevranStudent(){
-        int maxScore = kogtevranStudent[0].getStudentScore();
-        Kogtevran student = kogtevranStudent[0];
-        for (Kogtevran kogtevran : kogtevranStudent) {
+        int maxScore = KOGTEVRANSTUDENT[0].getStudentScore();
+        Kogtevran student = KOGTEVRANSTUDENT[0];
+        for (Kogtevran kogtevran : KOGTEVRANSTUDENT) {
             if (kogtevran.getStudentScore() > maxScore) {
                 maxScore = kogtevran.getStudentScore();
                 student = kogtevran;
@@ -67,15 +74,18 @@ public class Main {
     }
 
     private static void slytherinAdmission () {
-        for (int i = 0; i < Main.slytherinStudentsList.length; i++) {
-            slytherinStudent[i] = new Slytherin(Main.slytherinStudentsList[i].split(" ")[0],
-                    Main.slytherinStudentsList[i].split(" ")[1]);
+        for (int i = 0; i < Main.SLYTHERINSTUDENTSLIST.length; i++) {
+            SLYTHERINSTUDENT[i] = new Slytherin(Main.SLYTHERINSTUDENTSLIST[i].split(" ")[0],
+                    Main.SLYTHERINSTUDENTSLIST[i].split(" ")[1], new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100),new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100),new Random().nextInt(10, 100),
+                    new Random().nextInt(10, 100), new Random().nextInt(10, 100));
         }
     }
     private static void bestSlytherinStudent(){
-        int maxScore = slytherinStudent[0].getStudentScore();
-        Slytherin student = slytherinStudent[0];
-        for (Slytherin slytherin : slytherinStudent) {
+        int maxScore = SLYTHERINSTUDENT[0].getStudentScore();
+        Slytherin student = SLYTHERINSTUDENT[0];
+        for (Slytherin slytherin : SLYTHERINSTUDENT) {
             if (slytherin.getStudentScore() > maxScore) {
                 maxScore = slytherin.getStudentScore();
                 student = slytherin;
@@ -104,7 +114,7 @@ public class Main {
         System.out.println(headingForName + headingForWitchcraft+headingForTransgression+headingForNobility+
                 headingForHonour+headingForBravery);
         printFooter(headingLength);
-        for (Gryffindor gryffindor : gryffindorStudent) {
+        for (Gryffindor gryffindor : GRYFFINDORSTUDENT) {
             System.out.print("| "+gryffindor.getName() + " " + gryffindor.getSurname());
             for (int i = 0; i < headingForName.length()-1-gryffindor.getName().length()-1
                     -gryffindor.getSurname().length()-1 ; i++) {
@@ -132,7 +142,7 @@ public class Main {
         System.out.println(headingForName + headingForWitchcraft+headingForTransgression+ headingForDiligence +
                 headingForHonesty+headingForLoyalty);
         printFooter(headingLength);
-        for (Puffenduy puffenduy : puffenduyStudent) {
+        for (Puffenduy puffenduy : PUFFENDUYSTUDENT) {
             System.out.print("| " + puffenduy.getName() + " " + puffenduy.getSurname());
             for (int i = 0; i < headingForName.length()-1-puffenduy.getName().length()-1
                     -puffenduy.getSurname().length()-1 ; i++) {
@@ -161,7 +171,7 @@ public class Main {
         System.out.println(headingForName + headingForWitchcraft+headingForTransgression+ headingForClever +
                 headingForWit + headingForWisdom + headingForCreative);
         printFooter(headingLength);
-        for (Kogtevran kogtevran : kogtevranStudent) {
+        for (Kogtevran kogtevran : KOGTEVRANSTUDENT) {
             System.out.print("| " + kogtevran.getName() + " " + kogtevran.getSurname());
             for (int i = 0; i < headingForName.length()-1-kogtevran.getName().length()-1
                     -kogtevran.getSurname().length()-1 ; i++) {
@@ -193,7 +203,7 @@ public class Main {
         System.out.println(headingForName + headingForWitchcraft+headingForTransgression+ headingForTrick +
                 headingForDetermination + headingForAmbition + headingForIngenuity + headingForPower_Thirsty );
         printFooter(headingLength);
-        for (Slytherin slytherin : slytherinStudent) {
+        for (Slytherin slytherin : SLYTHERINSTUDENT) {
             System.out.print("| " + slytherin.getName() + " " + slytherin.getSurname());
             for (int i = 0; i < headingForName.length()-1-slytherin.getName().length()-1
                     -slytherin.getSurname().length()-1 ; i++) {
@@ -211,33 +221,33 @@ public class Main {
         printFooter(headingLength);
     }
 public static void compareStudents() {
-    int lengthOfHogwartsStudentsList = gryffindorStudent.length + puffenduyStudent.length + kogtevranStudent.length + slytherinStudent.length;
+    int lengthOfHogwartsStudentsList = GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + KOGTEVRANSTUDENT.length + SLYTHERINSTUDENT.length;
     String[] hogwartsStudents = new String[lengthOfHogwartsStudentsList];
     int[] witchcraft = new int[lengthOfHogwartsStudentsList];
     int[] transgression = new int[lengthOfHogwartsStudentsList];
-    for (int i = 0; i < gryffindorStudent.length; i++) {
-        hogwartsStudents[i] = gryffindorStudent[i].getName() + " " + gryffindorStudent[i].getSurname();
-        witchcraft[i] = gryffindorStudent[i].getWitchCraft();
-        transgression[i] = gryffindorStudent[i].getTransgression();
+    for (int i = 0; i < GRYFFINDORSTUDENT.length; i++) {
+        hogwartsStudents[i] = GRYFFINDORSTUDENT[i].getName() + " " + GRYFFINDORSTUDENT[i].getSurname();
+        witchcraft[i] = GRYFFINDORSTUDENT[i].getWitchCraft();
+        transgression[i] = GRYFFINDORSTUDENT[i].getTransgression();
     }
-        for (int j = 0; j < puffenduyStudent.length; j++){
-            hogwartsStudents[gryffindorStudent.length + j] = puffenduyStudent[j].getName() + " " + puffenduyStudent[j].getSurname();
-            witchcraft[gryffindorStudent.length + j] = puffenduyStudent[j].getWitchCraft();
-            transgression[gryffindorStudent.length + j] = puffenduyStudent[j].getTransgression();
+        for (int j = 0; j < PUFFENDUYSTUDENT.length; j++){
+            hogwartsStudents[GRYFFINDORSTUDENT.length + j] = PUFFENDUYSTUDENT[j].getName() + " " + PUFFENDUYSTUDENT[j].getSurname();
+            witchcraft[GRYFFINDORSTUDENT.length + j] = PUFFENDUYSTUDENT[j].getWitchCraft();
+            transgression[GRYFFINDORSTUDENT.length + j] = PUFFENDUYSTUDENT[j].getTransgression();
     }
-        for (int j = 0; j < kogtevranStudent.length; j++) {
-            hogwartsStudents[gryffindorStudent.length + puffenduyStudent.length + j] =
-                             kogtevranStudent[j].getName() + " " + kogtevranStudent[j].getSurname();
-            witchcraft[gryffindorStudent.length + puffenduyStudent.length + j] = kogtevranStudent[j].getWitchCraft();
-            transgression[gryffindorStudent.length + puffenduyStudent.length + j] = kogtevranStudent[j].getTransgression();
+        for (int j = 0; j < KOGTEVRANSTUDENT.length; j++) {
+            hogwartsStudents[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + j] =
+                             KOGTEVRANSTUDENT[j].getName() + " " + KOGTEVRANSTUDENT[j].getSurname();
+            witchcraft[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + j] = KOGTEVRANSTUDENT[j].getWitchCraft();
+            transgression[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + j] = KOGTEVRANSTUDENT[j].getTransgression();
         }
-        for (int j = 0; j < slytherinStudent.length; j++) {
-            hogwartsStudents[gryffindorStudent.length + puffenduyStudent.length + kogtevranStudent.length +j] =
-                    slytherinStudent[j].getName() + " " + slytherinStudent[j].getSurname();
-            witchcraft[gryffindorStudent.length + puffenduyStudent.length + kogtevranStudent.length +j] =
-                    slytherinStudent[j].getWitchCraft();
-            transgression[gryffindorStudent.length + puffenduyStudent.length + kogtevranStudent.length +j] =
-                    slytherinStudent[j].getTransgression();
+        for (int j = 0; j < SLYTHERINSTUDENT.length; j++) {
+            hogwartsStudents[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + KOGTEVRANSTUDENT.length +j] =
+                    SLYTHERINSTUDENT[j].getName() + " " + SLYTHERINSTUDENT[j].getSurname();
+            witchcraft[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + KOGTEVRANSTUDENT.length +j] =
+                    SLYTHERINSTUDENT[j].getWitchCraft();
+            transgression[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + KOGTEVRANSTUDENT.length +j] =
+                    SLYTHERINSTUDENT[j].getTransgression();
         }
 
     int i = new Random().nextInt(0, lengthOfHogwartsStudentsList);

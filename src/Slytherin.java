@@ -7,13 +7,14 @@ public class Slytherin extends Hogwarts{
     private int ingenuity;      //РЅР°С…РѕРґС‡РёРІРѕСЃС‚СЊ
     private int power_thirsty;  //Р¶Р°Р¶РґР° РІР»Р°СЃС‚Рё
 
-    protected Slytherin(String name, String surname) {
-        super(name, surname);
-        trick = new Random().nextInt(10,100);
-        determination = new Random().nextInt(10,100);
-        ambition = new Random().nextInt(10,100);
-        ingenuity = new Random().nextInt(10,100);
-        power_thirsty = new Random().nextInt(10,100);
+    protected Slytherin(String name, String surname, int witchcraft, int transgression,
+                        int trick, int determination, int ambition, int ingenuity, int power_thirsty ) {
+        super(name, surname, witchcraft, transgression);
+        this.trick = trick;
+        this.determination = determination;
+        this.ambition = ambition;
+        this.ingenuity = ingenuity;
+        this.power_thirsty = power_thirsty;
     }
 
     public int getTrick() {

@@ -5,12 +5,13 @@ public class Kogtevran extends Hogwarts{
     private int wit;        //РѕСЃС‚СЂРѕСѓРјРёРµ
     private int wisdom;     //РјСѓРґСЂРѕСЃС‚СЊ
     private int creative;   //С‚РІРѕСЂС‡РµСЃС‚РІРѕ
-    protected Kogtevran(String name, String surname) {
-        super(name, surname);
-        clever = new Random().nextInt(10,100);
-        wit = new Random().nextInt(10,100);
-        wisdom = new Random().nextInt(10,100);
-        creative = new Random().nextInt(10,100);
+    protected Kogtevran(String name, String surname, int witchcraft, int transgression,
+                        int clever, int wit, int wisdom, int creative) {
+        super(name, surname, witchcraft, transgression);
+        this.clever = clever;
+        this.wit = wit;
+        this.wisdom = wisdom;
+        this.creative = creative;
     }
 
     public int getClever() {
