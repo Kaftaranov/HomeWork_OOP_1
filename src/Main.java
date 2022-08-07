@@ -18,18 +18,7 @@ public class Main {
                     new Random().nextInt(10, 100), new Random().nextInt(10, 100));
         }
     }
-    private static void bestGryffindorStudent(){
-        int maxScore = GRYFFINDORSTUDENT[0].getGryffindorStudentScore();
-        Gryffindor student = GRYFFINDORSTUDENT[0];
-        for (Gryffindor gryffindor : GRYFFINDORSTUDENT) {
-            if (gryffindor.getGryffindorStudentScore() > maxScore) {
-                maxScore = gryffindor.getGryffindorStudentScore();
-                student = gryffindor;
-            }
-        }
-        System.out.println("The best student of Gryffindor is "+student.getName() + " " + student.getSurname() +
-                " with total score " + maxScore + " points!");
-    }
+
     private static void puffenduyadmission () {
         for (int i = 0; i < Main.PUFFENDUYSTUDENTLIST.length; i++) {
             PUFFENDUYSTUDENT[i] = new Puffenduy(Main.PUFFENDUYSTUDENTLIST[i].split(" ")[0],
@@ -37,18 +26,6 @@ public class Main {
                     new Random().nextInt(10, 100),new Random().nextInt(10, 100),
                     new Random().nextInt(10, 100),new Random().nextInt(10, 100));
         }
-    }
-    private  static void bestPuffenduyStudent() {
-        int maxScore = PUFFENDUYSTUDENT[0].getPuffenduyStudentScore();
-        Puffenduy student = PUFFENDUYSTUDENT[0];
-        for (Puffenduy puffenduy : PUFFENDUYSTUDENT) {
-            if (puffenduy.getPuffenduyStudentScore() > maxScore) {
-                maxScore = puffenduy.getPuffenduyStudentScore();
-                student = puffenduy;
-            }
-        }
-        System.out.println("The best student of Puffenduy is "+ student.getName() + " " + student.getSurname() +
-                " with total score " + maxScore + " points!");
     }
 
     private static void kogtevranAdmission () {
@@ -60,18 +37,6 @@ public class Main {
                     new Random().nextInt(10, 100));
         }
     }
-    private static void bestKogtevranStudent(){
-        int maxScore = KOGTEVRANSTUDENT[0].getKogtevranStudentScore();
-        Kogtevran student = KOGTEVRANSTUDENT[0];
-        for (Kogtevran kogtevran : KOGTEVRANSTUDENT) {
-            if (kogtevran.getKogtevranStudentScore() > maxScore) {
-                maxScore = kogtevran.getKogtevranStudentScore();
-                student = kogtevran;
-            }
-        }
-        System.out.println("The best student of Kogtevran is "+student.getName() + " " + student.getSurname() +
-                " with total score " + maxScore + " points!");
-    }
 
     private static void slytherinAdmission () {
         for (int i = 0; i < Main.SLYTHERINSTUDENTSLIST.length; i++) {
@@ -82,19 +47,6 @@ public class Main {
                     new Random().nextInt(10, 100), new Random().nextInt(10, 100));
         }
     }
-    private static void bestSlytherinStudent(){
-        int maxScore = SLYTHERINSTUDENT[0].getSlytherinStudentScore();
-        Slytherin student = SLYTHERINSTUDENT[0];
-        for (Slytherin slytherin : SLYTHERINSTUDENT) {
-            if (slytherin.getSlytherinStudentScore() > maxScore) {
-                maxScore = slytherin.getSlytherinStudentScore();
-                student = slytherin;
-            }
-        }
-        System.out.println("The best student of Slytherin is "+student.getName() + " " + student.getSurname() +
-                " with total score " + maxScore + " points!");
-    }
-
     private static void printFooter(int size) {
         for (int i = 0; i < size; i++) {
             System.out.print("=");
@@ -224,18 +176,17 @@ public class Main {
     public static void main(String[] args) {
         gryffindorAdmission();
         printGryffindorStudents();
-        bestGryffindorStudent();
+        GRYFFINDORSTUDENT[3].compareGryffindorStudent(GRYFFINDORSTUDENT[1]);
         puffenduyadmission();
         printPuffenduyStudents();
-        bestPuffenduyStudent();
+        PUFFENDUYSTUDENT[1].comparePuffenduyStudent(PUFFENDUYSTUDENT[3]);
         kogtevranAdmission();
         printKogtevranStudents();
-        bestKogtevranStudent();
+        KOGTEVRANSTUDENT[2].compareKogtevranStudent(KOGTEVRANSTUDENT[1]);
         slytherinAdmission();
         printSlytherinStudents();
-        bestSlytherinStudent();
+        SLYTHERINSTUDENT[2].compareSlytherinStudent(SLYTHERINSTUDENT[3]);
         System.out.println();
         GRYFFINDORSTUDENT[2].CompareHogwartsStudents(SLYTHERINSTUDENT[1]);
-
     }
 }

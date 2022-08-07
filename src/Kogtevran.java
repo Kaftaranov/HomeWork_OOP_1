@@ -46,5 +46,19 @@ public class Kogtevran extends Hogwarts{
     public int getKogtevranStudentScore(){
         return wisdom + wit + clever + creative;
     }
+    public void compareKogtevranStudent (Kogtevran student) {
+        int score1 = getKogtevranStudentScore();
+        int score2 = student.getKogtevranStudentScore();
+        if (score1 > score2) {
+            System.out.printf("Kogtevran student %s %s with score %d is better than student %s %s with score %d\n",
+                    getName(), getSurname(), score1, student.getName(), student.getSurname(), score2);
+        } else if (score1 < score2) {
+            System.out.printf("Kogtevran student %s %s with score %d is better than student %s %s with score %d\n",
+                    student.getName(), student.getSurname(), score2, getName(), getSurname(), score1);
+        } else {
+            System.out.printf("Kogtevran students %s %s and %s %s have same scores of %d\n", getName(), getSurname(),
+                    student.getName(), student.getSurname(), score1);
+        }
+    }
 
 }

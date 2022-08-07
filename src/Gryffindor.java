@@ -34,4 +34,18 @@ public class Gryffindor extends Hogwarts{
     public int getGryffindorStudentScore(){
         return honour + nobility + bravery;
     }
+    public void compareGryffindorStudent (Gryffindor student) {
+        int score1 = getGryffindorStudentScore();
+        int score2 = student.getGryffindorStudentScore();
+        if (score1 > score2) {
+            System.out.printf("Gryffindor student %s %s with score %d is better than student %s %s with score %d\n",
+                    getName(), getSurname(), score1, student.getName(), student.getSurname(), score2);
+        } else if (score1 < score2) {
+            System.out.printf("Gryffindor student %s %s with score %d is better than student %s %s with score %d\n",
+                    student.getName(), student.getSurname(), score2, getName(), getSurname(), score1);
+        } else {
+            System.out.printf("Gryffindor students %s %s and %s %s have same scores of %d\n", getName(), getSurname(),
+                    student.getName(), student.getSurname(), score1);
+        }
+    }
 }

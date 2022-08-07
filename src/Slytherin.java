@@ -57,5 +57,19 @@ public class Slytherin extends Hogwarts{
     public int getSlytherinStudentScore(){
         return trick + ingenuity + power_thirsty + determination + ambition;
     }
+    public void compareSlytherinStudent (Slytherin student) {
+        int score1 = getSlytherinStudentScore();
+        int score2 = student.getSlytherinStudentScore();
+        if (score1 > score2) {
+            System.out.printf("Slytherin student %s %s with score %d is better than student %s %s with score %d\n",
+                    getName(), getSurname(), score1, student.getName(), student.getSurname(), score2);
+        } else if (score1 < score2) {
+            System.out.printf("Slytherin student %s %s with score %d is better than student %s %s with score %d\n",
+                    student.getName(), student.getSurname(), score2, getName(), getSurname(), score1);
+        } else {
+            System.out.printf("Slytherin students %s %s and %s %s have same scores of %d\n", getName(), getSurname(),
+                    student.getName(), student.getSurname(), score1);
+        }
+    }
 
 }
