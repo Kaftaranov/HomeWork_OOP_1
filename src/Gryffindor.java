@@ -1,4 +1,3 @@
-import java.util.Random;
 public class Gryffindor extends Hogwarts{
     private int nobility;   //Р±Р»Р°РіРѕСЂРѕРґСЃС‚РІРѕ
     private int honour;      //С‡РµСЃС‚СЊ
@@ -32,7 +31,7 @@ public class Gryffindor extends Hogwarts{
     public void setNobility(int nobility) {
         this.nobility = nobility;
     }
-    public int getStudentScore(){
+    public int getGryffindorStudentScore(){
         return honour + nobility + bravery;
     }
 }

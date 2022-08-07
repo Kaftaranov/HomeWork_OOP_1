@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Puffenduy extends Hogwarts{
     private int diligence;  //С‚СЂСѓРґРѕР»СЋР±РёРµ
     private int loyalty;    //РІРµСЂРЅРѕСЃС‚СЊ
@@ -35,7 +33,7 @@ public class Puffenduy extends Hogwarts{
     public void setLoyalty(int loyalty) {
         this.loyalty = loyalty;
     }
-    public int getStudentScore(){
+    public int getPuffenduyStudentScore(){
         return honesty + loyalty + diligence;
     }
 }

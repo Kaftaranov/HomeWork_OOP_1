@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Kogtevran extends Hogwarts{
     private int clever;     //СѓРј
     private int wit;        //РѕСЃС‚СЂРѕСѓРјРёРµ
@@ -45,7 +43,7 @@ public class Kogtevran extends Hogwarts{
     public void setCreative(int creative) {
         this.creative = creative;
     }
-    public int getStudentScore(){
+    public int getKogtevranStudentScore(){
         return wisdom + wit + clever + creative;
     }
 

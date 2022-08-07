@@ -19,11 +19,11 @@ public class Main {
         }
     }
     private static void bestGryffindorStudent(){
-        int maxScore = GRYFFINDORSTUDENT[0].getStudentScore();
+        int maxScore = GRYFFINDORSTUDENT[0].getGryffindorStudentScore();
         Gryffindor student = GRYFFINDORSTUDENT[0];
         for (Gryffindor gryffindor : GRYFFINDORSTUDENT) {
-            if (gryffindor.getStudentScore() > maxScore) {
-                maxScore = gryffindor.getStudentScore();
+            if (gryffindor.getGryffindorStudentScore() > maxScore) {
+                maxScore = gryffindor.getGryffindorStudentScore();
                 student = gryffindor;
             }
         }
@@ -39,11 +39,11 @@ public class Main {
         }
     }
     private  static void bestPuffenduyStudent() {
-        int maxScore = PUFFENDUYSTUDENT[0].getStudentScore();
+        int maxScore = PUFFENDUYSTUDENT[0].getPuffenduyStudentScore();
         Puffenduy student = PUFFENDUYSTUDENT[0];
         for (Puffenduy puffenduy : PUFFENDUYSTUDENT) {
-            if (puffenduy.getStudentScore() > maxScore) {
-                maxScore = puffenduy.getStudentScore();
+            if (puffenduy.getPuffenduyStudentScore() > maxScore) {
+                maxScore = puffenduy.getPuffenduyStudentScore();
                 student = puffenduy;
             }
         }
@@ -61,11 +61,11 @@ public class Main {
         }
     }
     private static void bestKogtevranStudent(){
-        int maxScore = KOGTEVRANSTUDENT[0].getStudentScore();
+        int maxScore = KOGTEVRANSTUDENT[0].getKogtevranStudentScore();
         Kogtevran student = KOGTEVRANSTUDENT[0];
         for (Kogtevran kogtevran : KOGTEVRANSTUDENT) {
-            if (kogtevran.getStudentScore() > maxScore) {
-                maxScore = kogtevran.getStudentScore();
+            if (kogtevran.getKogtevranStudentScore() > maxScore) {
+                maxScore = kogtevran.getKogtevranStudentScore();
                 student = kogtevran;
             }
         }
@@ -83,11 +83,11 @@ public class Main {
         }
     }
     private static void bestSlytherinStudent(){
-        int maxScore = SLYTHERINSTUDENT[0].getStudentScore();
+        int maxScore = SLYTHERINSTUDENT[0].getSlytherinStudentScore();
         Slytherin student = SLYTHERINSTUDENT[0];
         for (Slytherin slytherin : SLYTHERINSTUDENT) {
-            if (slytherin.getStudentScore() > maxScore) {
-                maxScore = slytherin.getStudentScore();
+            if (slytherin.getSlytherinStudentScore() > maxScore) {
+                maxScore = slytherin.getSlytherinStudentScore();
                 student = slytherin;
             }
         }
@@ -220,63 +220,7 @@ public class Main {
         }
         printFooter(headingLength);
     }
-public static void compareStudents() {
-    int lengthOfHogwartsStudentsList = GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + KOGTEVRANSTUDENT.length + SLYTHERINSTUDENT.length;
-    String[] hogwartsStudents = new String[lengthOfHogwartsStudentsList];
-    int[] witchcraft = new int[lengthOfHogwartsStudentsList];
-    int[] transgression = new int[lengthOfHogwartsStudentsList];
-    for (int i = 0; i < GRYFFINDORSTUDENT.length; i++) {
-        hogwartsStudents[i] = GRYFFINDORSTUDENT[i].getName() + " " + GRYFFINDORSTUDENT[i].getSurname();
-        witchcraft[i] = GRYFFINDORSTUDENT[i].getWitchCraft();
-        transgression[i] = GRYFFINDORSTUDENT[i].getTransgression();
-    }
-        for (int j = 0; j < PUFFENDUYSTUDENT.length; j++){
-            hogwartsStudents[GRYFFINDORSTUDENT.length + j] = PUFFENDUYSTUDENT[j].getName() + " " + PUFFENDUYSTUDENT[j].getSurname();
-            witchcraft[GRYFFINDORSTUDENT.length + j] = PUFFENDUYSTUDENT[j].getWitchCraft();
-            transgression[GRYFFINDORSTUDENT.length + j] = PUFFENDUYSTUDENT[j].getTransgression();
-    }
-        for (int j = 0; j < KOGTEVRANSTUDENT.length; j++) {
-            hogwartsStudents[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + j] =
-                             KOGTEVRANSTUDENT[j].getName() + " " + KOGTEVRANSTUDENT[j].getSurname();
-            witchcraft[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + j] = KOGTEVRANSTUDENT[j].getWitchCraft();
-            transgression[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + j] = KOGTEVRANSTUDENT[j].getTransgression();
-        }
-        for (int j = 0; j < SLYTHERINSTUDENT.length; j++) {
-            hogwartsStudents[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + KOGTEVRANSTUDENT.length +j] =
-                    SLYTHERINSTUDENT[j].getName() + " " + SLYTHERINSTUDENT[j].getSurname();
-            witchcraft[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + KOGTEVRANSTUDENT.length +j] =
-                    SLYTHERINSTUDENT[j].getWitchCraft();
-            transgression[GRYFFINDORSTUDENT.length + PUFFENDUYSTUDENT.length + KOGTEVRANSTUDENT.length +j] =
-                    SLYTHERINSTUDENT[j].getTransgression();
-        }
 
-    int i = new Random().nextInt(0, lengthOfHogwartsStudentsList);
-    int j = new Random().nextInt(0, lengthOfHogwartsStudentsList);
-    if (i == j) {
-        j = new Random().nextInt(0, lengthOfHogwartsStudentsList);
-    }
-    System.out.println("Today we compare abilities of " + hogwartsStudents[i] + " and " + hogwartsStudents[j] + ".");
-    System.out.println("Witchcraft of " + hogwartsStudents[i] + " is " + witchcraft[i] + " points, and his transgression is "
-            + transgression[i] + " points.");
-    System.out.print("His witchcraft is ");
-    if (witchcraft[i] < witchcraft[j]) {
-        System.out.print("weaker than");
-    } else if (witchcraft[i] > witchcraft[j]) {
-        System.out.print("stronger than");
-    } else {
-        System.out.print("equal to");}
-        System.out.println(" witchcraft of " + hogwartsStudents[j] + " with " + witchcraft[j] + " points.");
-        System.out.print("Transgression of " + hogwartsStudents[i] + " is ");
-        if (transgression[i] < transgression[j]) {
-            System.out.print("weaker than");
-        } else if (transgression[i] > transgression[j]) {
-            System.out.print("stronger than");
-        } else {
-            System.out.print("equal to");
-        }
-        System.out.println(" transgression of " + hogwartsStudents[j] + " with " + transgression[j] + " points.");
-
-    }
     public static void main(String[] args) {
         gryffindorAdmission();
         printGryffindorStudents();
@@ -291,6 +235,7 @@ public static void compareStudents() {
         printSlytherinStudents();
         bestSlytherinStudent();
         System.out.println();
-        compareStudents();
+        GRYFFINDORSTUDENT[2].CompareHogwartsStudents(SLYTHERINSTUDENT[1]);
+
     }
 }

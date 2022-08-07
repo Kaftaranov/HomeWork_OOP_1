@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Slytherin extends Hogwarts{
     private int trick;          //С…РёС‚СЂРѕСЃС‚СЊ
     private int determination;  //СЂРµС€РёС‚РµР»СЊРЅРѕСЃС‚СЊ
@@ -56,7 +54,7 @@ public class Slytherin extends Hogwarts{
     public void setPower_thirsty(int power_thirsty) {
         this.power_thirsty = power_thirsty;
     }
-    public int getStudentScore(){
+    public int getSlytherinStudentScore(){
         return trick + ingenuity + power_thirsty + determination + ambition;
     }
 
